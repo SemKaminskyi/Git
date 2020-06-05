@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Your helper</string>
+    <string name="hello_new_world">Hello new World!</string>
 </resources>
