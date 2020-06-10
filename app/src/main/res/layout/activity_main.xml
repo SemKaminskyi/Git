@@ -26,4 +26,13 @@
         tools:layout_editor_absoluteX="151dp"
         tools:ignore="MissingConstraints" />
 
+    <EditText
+        android:id="@+id/et_test1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/text2"
+        app:layout_constraintTop_toBottomOf="@+id/textHelloWrold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="195dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
