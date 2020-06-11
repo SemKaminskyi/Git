@@ -1,49 +1,39 @@
 package com.gmail.kaminskyisem.testGit;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+
+import com.gmail.kaminskyisem.testGit.CardDetails.CardDetailsAdapter;
+import com.gmail.kaminskyisem.testGit.model.CardDetails;
+import com.gmail.kaminskyisem.testGit.model.UserCardProvider;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static String LOG_TAG = MainActivity.class.getSimpleName();
-    private Button heiMEButton;
+    private RecyclerView rvBankCards;
+    private CardDetailsAdapter adapter;
 
-    View.OnClickListener btnOnKlick = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Log.d(LOG_TAG, "hit me on Click"+v);
-
-            Intent i = new Intent(MainActivity.this,MainActivity2.class);
-//            i.putExtra();
-            startActivity(i);
-        }
-    }git
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_main);
-        heiMEButton = findViewById(R.id.btn_hit_me);
-        Log.d(LOG_TAG, "onCreate,:" + this);
+        cardList = new UserCardProvider().getCardDetails ();
+        adapter = new CardDetailsAdapter();
 
+        rvBankCards = findViewById(R.id.rvBankCardList);
+        rvBankCards.setAdapter(adapter);
+        rvBankCards.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
 
+        List<CardDetails> cardList = new UserCardProvider();
+        adapter.setCards(cardList);
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(LOG_TAG, "on start,:" + this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(LOG_TAG, "on RESUME,:" + this);
-    }
-
-
 }
