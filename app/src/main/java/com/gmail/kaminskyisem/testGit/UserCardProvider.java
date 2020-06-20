@@ -1,4 +1,6 @@
-package com.gmail.kaminskyisem.testGit.model;
+package com.gmail.kaminskyisem.testGit;
+
+import com.gmail.kaminskyisem.testGit.model.CardDetails;
 
 import java.util.ArrayList;
 import java.util.List;

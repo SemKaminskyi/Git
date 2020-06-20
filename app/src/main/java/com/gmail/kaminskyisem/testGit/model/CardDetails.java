@@ -5,15 +5,15 @@ public final class CardDetails {
     private final String cardNumber;
     private float balance;
     private final String expiryDate;
-    private String pincode;
+    private String pinCode;
 
 
-    public CardDetails(String ownerName, String cardNumber, float balance, String expiryDate, String pincode) {
+    public CardDetails(String ownerName, String cardNumber, float balance, String expiryDate, String pinCode) {
         this.ownerName = ownerName;
         this.cardNumber = cardNumber;
         this.balance = balance;
         this.expiryDate = expiryDate;
-        this.pincode = pincode;
+        this.pinCode = pinCode;
     }
 
     public String getOwnerName() {
@@ -39,11 +39,11 @@ public final class CardDetails {
     }
 
 
-    public String getPincode() {
-        return pincode;
+    public String getPinCode() {
+        return pinCode;
     }
 
-    public void setPincode(String pincode) {
-        this.pincode = pincode;
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
     }
 }

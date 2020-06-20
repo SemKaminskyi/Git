@@ -7,9 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gmail.kaminskyisem.testGit.CardDetailsViewHolder;
-import com.gmail.kaminskyisem.testGit.R;
 import com.gmail.kaminskyisem.testGit.model.CardDetails;
+import com.gmail.kaminskysem.yourhelper.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,25 +17,27 @@ public class CardDetailsAdapter extends RecyclerView.Adapter<CardDetailsViewHold
     private final List<CardDetails> cards = new ArrayList<>();
 
     public void setCards (List<CardDetails> cards){
-        this.cards=
+        this.cards.clear();
+        this.cards.addAll(cards);
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public CardDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_carddetails, parent);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_carddetails, parent, false);
         return new CardDetailsViewHolder(v);
-
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull CardDetailsViewHolder holder, int position) {
-
+        CardDetails card = cards.get(position);
+        holder.bind(card);
     }
 
     @Override
     public int getItemCount() {
-        return 1000;
+        return cards.size();
+//        return 100;
     }
 }

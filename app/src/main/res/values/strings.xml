@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">TestGit</string>
+    <string name="app_name">Your helper</string>
+    <string name="nubmerCard">1111 2222 3333 4444</string>
+    <string name="ownerName">Sem Kaminskyi</string>
+    <string name="dateExpiry">12/20</string>
+    <string name="Balance">1200.00</string>
+    <string name="btn_reverse_list">Reverse list</string>
 </resources>
